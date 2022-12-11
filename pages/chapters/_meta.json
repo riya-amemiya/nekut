@@ -1,0 +1,9 @@
+{
+  "basic": "基本",
+  "c": "C言語",
+  "javascript": "JavaScript",
+  "nodejs": "Node.js",
+  "python": "Python",
+  "react": "React",
+  "typescript": "TypeScript"
+}

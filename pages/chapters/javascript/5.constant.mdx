@@ -1,0 +1,17 @@
+# JavaScriptの定数
+
+JavaScriptの定数は、以下のように宣言することができます。
+
+```js
+const PI = 3.14;
+```
+
+ただし、定数は再宣言できないので、変数とは異なります。
+
+```js
+let age = 20;
+age = 21; // 予期しない変更ができてしまう
+
+const age = 20;
+age = 21; // SyntaxError: Identifier 'age' has already been declared
+```

@@ -1,0 +1,42 @@
+# TypeScriptでHello World
+
+TypeScriptはJavaScriptの高級言語です。
+
+```typescript filename="hello.ts"
+// Hello Worldプログラム
+console.log("Hello World!");
+```
+
+TypeScriptプログラムを実行するには、まずTypeScriptコンパイラをインストールする必要があります。
+
+```bash
+$ npm install -g typescript
+```
+
+もしくは
+
+```bash
+$ yarn global add typescript
+```
+
+その後、次のように`tsc`コマンドを使用してTypeScriptコードをJavaScriptにトランスパイルします。
+
+```bash
+$ tsc hello.ts
+```
+
+これにより、同じディレクトリに`index.js`という名前のJavaScriptファイルが生成されます。<br/>
+その後、次のように`node`コマンドを使用してJavaScriptプログラムを実行できます。
+
+```bash
+$ node index.js
+```
+
+実行すると、次のように「Hello World!」と表示されます。
+
+```text
+Hello World!
+```
+
+TypeScriptを使用することで、JavaScriptプログラムがより柔軟で拡張可能なものになります。<br/>
+また、型システムを使用することで、プログラムのエラーを早期に検出しやすくなります。

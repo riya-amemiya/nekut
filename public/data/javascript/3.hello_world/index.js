@@ -1,0 +1,1 @@
+console.log("Hello World!"); // 好きな言葉に変えてください
