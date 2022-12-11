@@ -151,6 +151,10 @@ const config: DocsThemeConfig = {
                     content="width=device-width, initial-scale=1"
                 />
                 <meta name="robots" content="noindex" />
+                <meta
+                    name="google-site-verification"
+                    content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+                />
                 <Script
                     async
                     src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
