@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig } from 'nextra-theme-docs';
 import { IconContext } from 'react-icons';
 import { FiGithub, FiLink } from 'react-icons/fi';
 import { SiTwitter, SiZenn } from 'react-icons/si';
@@ -83,7 +83,6 @@ const config: DocsThemeConfig = {
     },
     head: () => {
         const { asPath } = useRouter();
-        const { frontMatter } = useConfig();
         return (
             <>
                 <link
@@ -117,6 +116,10 @@ const config: DocsThemeConfig = {
                     content="#da532c"
                 />
                 <meta name="theme-color" content="#ffffff" />
+                <link
+                    rel="canonical"
+                    href={`${siteMetadata.siteURL}${asPath}`}
+                />
                 <meta
                     property="og:url"
                     content={`${siteMetadata.siteURL}${asPath}`}
@@ -153,7 +156,10 @@ const config: DocsThemeConfig = {
                 <meta name="robots" content="noindex" />
                 <meta
                     name="google-site-verification"
-                    content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+                    content={
+                        process.env
+                            .NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+                    }
                 />
                 <Script
                     async
