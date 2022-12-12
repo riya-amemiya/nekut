@@ -4,9 +4,10 @@
   "description": "Nextra docs template",
   "scripts": {
     "dev": "next dev",
-    "build": "yarn createZip && next build",
+    "build": "yarn createZip && next build && yarn sitemap",
     "start": "next start",
-    "createZip": "rm -rf public/data/**/*.zip && node createZip.js"
+    "createZip": "rm -rf public/data/**/*.zip && node createZip.js",
+    "sitemap": "next-sitemap"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "dependencies": {
     "archiver": "^5.3.1",
     "next": "^13.0.6",
+    "next-sitemap": "^3.1.32",
     "nextra": "2.0.1",
     "nextra-theme-docs": "2.0.1",
     "react": "^18.2.0",
@@ -34,7 +36,6 @@
     "@types/node": "18.11.11",
     "@types/sitemap-generator": "^8.5.1",
     "glob": "^8.0.3",
-    "sitemap-generator": "^8.5.1",
     "typescript": "^4.9.3",
     "umt_plugin_node": "^1.0.1",
     "vercel": "^28.8.0"
