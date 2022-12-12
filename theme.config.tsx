@@ -4,7 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs';
 import { IconContext } from 'react-icons';
 import { FiGithub, FiLink } from 'react-icons/fi';
 import { SiTwitter, SiZenn } from 'react-icons/si';
-const siteMetadata = {
+export const siteMetadata = {
     title: process.env.NEXT_PUBLIC_SITE_TITLE,
     siteURL: process.env.NEXT_PUBLIC_SITE_URL.slice(0, -1),
     repository: 'https://github.com/riya-amemiya/nekut',
@@ -153,7 +153,7 @@ const config: DocsThemeConfig = {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <meta name="robots" content="noindex" />
+
                 <meta
                     name="google-site-verification"
                     content={
