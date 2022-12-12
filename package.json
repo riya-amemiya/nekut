@@ -32,8 +32,11 @@
     "@types/archiver": "^5.3.1",
     "@types/glob": "^8.0.0",
     "@types/node": "18.11.11",
+    "@types/sitemap-generator": "^8.5.1",
     "glob": "^8.0.3",
+    "sitemap-generator": "^8.5.1",
     "typescript": "^4.9.3",
+    "umt_plugin_node": "^1.0.1",
     "vercel": "^28.8.0"
   }
 }
