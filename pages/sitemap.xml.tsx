@@ -5,7 +5,7 @@ const generateSitemapXml = async () => {
     const option = {};
     // create generator
     const generator = SitemapGenerator(
-        'https://nekut.oshaburikitchin.com/',
+        process.env.NEXT_PUBLIC_SITE_URL,
         option,
     );
     // register event listeners
