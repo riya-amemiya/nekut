@@ -1,0 +1,54 @@
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+# Pythonの環境構築
+
+[こちら](https://onecompiler.com/python)のサイトを利用してコードを実行します。
+
+ローカルで動かしたい場合は`Python`をインストールしてください。
+
+## Pythonのインストール方法
+
+<Tabs items={['Mac', ' Windows']}>
+    <Tab>
+
+        ### Command Line Toolsのインストール
+
+        ターミナルを起動し、次のコマンドを実行します。
+
+        ```bash
+        gcc
+        ```
+
+        Command Line Tools がインストールされていない場合は、Command Line Tools のインストールが開始されます。
+
+        ### Homebrewのインストール
+
+        コマンド実行中に、下図のように
+
+        ```text
+        Press RETURN to continue or any other key to abort
+        ```
+
+        というメッセージが表示されたら、リターンキーを押します。
+
+        ### Pythonのインストール
+
+        ターミナルを起動し、次のコマンドを実行します。
+
+        最新版
+
+        ```bash
+        brew install python3
+        ```
+
+        最新版だと動かないライブラリなどもあるので`3.7`ぐらいのバージョンをインストールすることをおすすめします。
+
+        ```bash
+        brew install python@3.7
+        ```
+
+    </Tab>
+    <Tab>
+        製作中
+    </Tab>
+</Tabs>
