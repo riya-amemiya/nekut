@@ -1,6 +1,8 @@
 import { Tab, Tabs } from 'nextra-theme-docs'
 
-# Node.jsのインストール方法
+# Node.jsnの環境構築
+
+## Node.jsのインストール方法
 
 <Tabs items={['Mac', ' Windows']}>
     <Tab>
@@ -48,3 +50,103 @@ import { Tab, Tabs } from 'nextra-theme-docs'
         このコマンドを実行することで、Node.jsが正常にインストールされたかどうかを確認することができます。
     </Tab>
 </Tabs>
+
+## Node.jsのバージョンを確認する方法
+
+```bash
+node -v
+```
+
+## Node.jsでJavaScriptファイルを実行する方法
+
+```bash
+node <file>
+```
+
+## Node.jsのパッケージマネージャーをインストールする方法
+
+Node.jsのパッケージマネージャーとは、Node.jsのパッケージを管理するためのツールです。<br/>
+Node.jsのパッケージマネージャーは、npmとyarnの2つがあります。<br/>
+npmは、Node.jsの公式パッケージマネージャーです。<br/>
+yarnは、Facebookが開発したパッケージマネージャーです。<br/>
+npmとyarnは、ほぼ同じ機能を持っています。<br/>
+
+```bash
+npm install <package>
+```
+
+```bash
+yarn add <package>
+```
+
+## Node.jsのパッケージをアンインストールする方法
+
+```bash
+npm uninstall <package>
+```
+
+```bash
+yarn remove <package>
+```
+
+## Node.jsのパッケージをアップデートする方法
+
+```bash
+npm update <package>
+```
+
+```bash
+yarn upgrade <package>
+```
+
+## Node.jsのパッケージを確認する方法
+
+```bash
+npm list
+```
+
+```bash
+yarn list
+```
+
+## Node.jsのパッケージをグローバルにインストールする方法
+
+```bash
+npm install -g <package>
+```
+
+```bash
+yarn global add <package>
+```
+
+## Node.jsのグローバルパッケージをアンインストールする方法
+
+```bash
+npm uninstall -g <package>
+```
+
+```bash
+yarn global remove <package>
+```
+
+## Node.jsのグローバルパッケージをアップデートする方法
+
+```bash
+npm update -g <package>
+```
+
+```bash
+yarn global upgrade <package>
+```
+
+## Node.jsのグローバルパッケージを確認する方法
+
+```bash
+npm list -g
+```
+
+```bash
+yarn global list
+```
+
+
