@@ -1,0 +1,100 @@
+import { GetCodeLink } from "../../../components/GetCodeLink";
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+# TypeScriptの環境構築
+
+## 1. Node.jsのインストール
+
+インストール方法は<GetCodeLink path="/chapters/nodejs/2.environment">こちら</GetCodeLink>を参考にしてください。
+
+## 2. TypeScriptのインストール
+
+<Tabs items={['npm', ' yarn']}>
+    <Tab>
+
+        ```bash
+        npm install -g typescript
+        ```
+
+    </Tab>
+
+    <Tab>
+
+        ```bash
+        yarn global add typescript
+        ```
+
+    </Tab>
+
+</Tabs>
+
+## 3. TypeScriptのバージョン確認
+
+```bash
+tsc -v
+```
+
+## 4. TypeScriptの設定
+
+ソースコードを書いてるディレクトリに`tsconfig.json`を作成します。
+
+```bash
+touch tsconfig.json
+```
+
+`tsconfig.json`の設定は[公式ドキュメント](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)を参考にしてください。
+
+
+`tsconfig.json`の中身は以下がおすすめです。
+
+```json
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": false,
+		"incremental": true,
+		"declarationMap": false,
+		"forceConsistentCasingInFileNames": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"noEmit": false,
+		"declaration": true,
+		"outDir": "./build",
+		"alwaysStrict": true,
+		"strictPropertyInitialization": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"removeComments": false,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"preserveSymlinks": true,
+		"jsx": "preserve",
+		"isolatedModules": true,
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"importHelpers": false,
+		"strictBindCallApply": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+	},
+	"include": [
+		"src",
+	]
+}
+```
+

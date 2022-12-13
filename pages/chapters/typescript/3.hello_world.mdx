@@ -1,4 +1,8 @@
+import { GetCodeLink } from "../../../components/GetCodeLink";
+
 # TypeScriptでHello World
+
+今回のソースコードは<GetCodeLink>こちら</GetCodeLink>からダウンロードできます。
 
 TypeScriptはJavaScriptの高級言語です。
 
@@ -7,29 +11,17 @@ TypeScriptはJavaScriptの高級言語です。
 console.log("Hello World!");
 ```
 
-TypeScriptプログラムを実行するには、まずTypeScriptコンパイラをインストールする必要があります。
+次のように`tsc`コマンドを使用してTypeScriptコードをJavaScriptにトランスパイルします。
 
 ```bash
-$ npm install -g typescript
+$ tsc
 ```
 
-もしくは
-
-```bash
-$ yarn global add typescript
-```
-
-その後、次のように`tsc`コマンドを使用してTypeScriptコードをJavaScriptにトランスパイルします。
-
-```bash
-$ tsc hello.ts
-```
-
-これにより、同じディレクトリに`index.js`という名前のJavaScriptファイルが生成されます。<br/>
+これにより、`build`ディレクトリに`index.js`という名前のJavaScriptファイルが生成されます。<br/>
 その後、次のように`node`コマンドを使用してJavaScriptプログラムを実行できます。
 
 ```bash
-$ node index.js
+$ node ./build/index.js
 ```
 
 実行すると、次のように「Hello World!」と表示されます。
