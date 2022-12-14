@@ -1,9 +1,13 @@
 {
+  "index": "はじめに",
+  "about": "このサイトについて",
+  "chapters": "コース一覧",
+  "links": "リンク集",
+  "bonus": "おまけ",
   "contact": {
     "href": "https://ko-fi.com/oshaburikitchin",
     "newWindow": true,
     "title": "Support ↗",
     "type": "page"
-  },
-  "index": "Introduction"
+  }
 }
