@@ -1,6 +1,5 @@
 import { NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { IconContext } from 'react-icons';
 import { FiGithub, FiLink } from 'react-icons/fi';
@@ -148,17 +147,6 @@ const config: DocsThemeConfig = {
                             .NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
                     }
                 />
-                <Script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-                />
-                <Script>
-                    {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
-                </Script>
             </>
         );
     },
