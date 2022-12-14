@@ -3,7 +3,13 @@ import { useRouter } from 'next/router';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { IconContext } from 'react-icons';
 import { FiGithub, FiLink } from 'react-icons/fi';
-import { SiTwitter, SiZenn } from 'react-icons/si';
+import
+    {
+        SiDiscord,
+        SiSlack,
+        SiTwitter,
+        SiZenn,
+    } from 'react-icons/si';
 export const siteMetadata = {
     title: process.env.NEXT_PUBLIC_SITE_TITLE,
     siteURL: process.env.NEXT_PUBLIC_SITE_URL.slice(0, -1),
@@ -15,10 +21,22 @@ export const siteMetadata = {
         blog: 'https://amemiya-riya-blog.oshaburikitchin.com/',
     },
 };
+const chatURLParce = new URL(
+    process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL,
+);
+let chatIcon = <SiSlack />
+if (chatURLParce.hostname.indexOf('discord') !== -1) {
+    chatIcon = <SiDiscord />
+}
 const config: DocsThemeConfig = {
     logo: <span>{siteMetadata.title}</span>,
     chat: {
-        link: process.env.NEXT_PUBLIC_DISCORD_URL,
+        icon: (
+            <IconContext.Provider value={{ size: '25' }}>
+                    {chatIcon}
+            </IconContext.Provider>
+        ),
+        link: process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL,
     },
     docsRepositoryBase: `${siteMetadata.repository}/blob/beta/`,
     footer: {
@@ -59,10 +77,9 @@ const config: DocsThemeConfig = {
                                         value={{ size: '25' }}>
                                         <a
                                             key={n.link}
-                                            href={ n.link }
+                                            href={n.link}
                                             target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
+                                            rel="noopener noreferrer">
                                             {n.icon({})}
                                         </a>
                                     </IconContext.Provider>
