@@ -1,5 +1,5 @@
+import { NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { IconContext } from 'react-icons';
 import { FiGithub, FiLink } from 'react-icons/fi';
@@ -20,7 +20,7 @@ const config: DocsThemeConfig = {
     chat: {
         link: process.env.NEXT_PUBLIC_DISCORD_URL,
     },
-    docsRepositoryBase: siteMetadata.repository,
+    docsRepositoryBase: `${siteMetadata.repository}/blob/beta/`,
     footer: {
         text: () => {
             return (
@@ -70,19 +70,39 @@ const config: DocsThemeConfig = {
         },
     },
     useNextSeoProps() {
-        const { route } = useRouter();
+        const { route, asPath } = useRouter();
+        const openGraph: NextSeoProps['openGraph'] = {
+            url: `${siteMetadata.siteURL}${asPath}`,
+            title: siteMetadata.title || 'Nextra',
+            images: [
+                {
+                    url: `${siteMetadata.siteURL}/img/logo_wide.png`,
+                },
+            ],
+            type: 'website',
+        };
+        const twitter: NextSeoProps['twitter'] = {
+            site: '@riya31377928',
+            cardType: 'summary_large_image',
+        };
+        const canonical = `${siteMetadata.siteURL}${asPath}`;
         if (route !== '/') {
             return {
+                openGraph,
+                twitter,
+                canonical,
                 titleTemplate: `%s - ${siteMetadata.title}`,
             };
         } else if (route === '/') {
             return {
+                openGraph,
+                twitter,
+                canonical,
                 title: siteMetadata.title,
             };
         }
     },
     head: () => {
-        const { asPath } = useRouter();
         return (
             <>
                 <link
@@ -116,44 +136,10 @@ const config: DocsThemeConfig = {
                     content="#da532c"
                 />
                 <meta name="theme-color" content="#ffffff" />
-                <link
-                    rel="canonical"
-                    href={`${siteMetadata.siteURL}${asPath}`}
-                />
-                <meta
-                    property="og:url"
-                    content={`${siteMetadata.siteURL}${asPath}`}
-                />
-                <meta
-                    property="og:title"
-                    content={siteMetadata.title || 'Nextra'}
-                />
-                <meta
-                    property="og:image"
-                    content={`${siteMetadata.siteURL}/img/logo_wide.png`}
-                />
-                <meta property="og:type" content="website" />
-                <meta
-                    property="twitter:title"
-                    content={siteMetadata.title || 'Nextra'}
-                />
-                <meta
-                    property="twitter:card"
-                    content="summary_large_image"
-                />
-                <meta
-                    property="twitter:url"
-                    content={`${siteMetadata.siteURL}${asPath}`}
-                />
-                <meta
-                    property="twitter:site"
-                    content={'@riya31377928'}
-                />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-
                 <meta
                     name="google-site-verification"
                     content={
@@ -161,17 +147,6 @@ const config: DocsThemeConfig = {
                             .NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
                     }
                 />
-                <Script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-                />
-                <Script>
-                    {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
-                </Script>
             </>
         );
     },
