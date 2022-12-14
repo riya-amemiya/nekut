@@ -5,7 +5,6 @@ import Document, {
     NextScript,
 } from 'next/document';
 import { GA_ID } from '../lib/gtag';
-
 class MyDocument extends Document {
     render() {
         return (
@@ -36,6 +35,7 @@ class MyDocument extends Document {
                 </Head>
                 <body>
                     <Main />
+
                     <NextScript />
                 </body>
             </Html>

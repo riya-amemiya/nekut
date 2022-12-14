@@ -57,7 +57,12 @@ const config: DocsThemeConfig = {
                                     }}>
                                     <IconContext.Provider
                                         value={{ size: '25' }}>
-                                        <a key={n.link} href={n.link}>
+                                        <a
+                                            key={n.link}
+                                            href={ n.link }
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             {n.icon({})}
                                         </a>
                                     </IconContext.Provider>
