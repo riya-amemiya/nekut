@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/riya-amemiya/nekut/issues"
   },
-  "homepage": "https://nekut.vercel.app/",
+  "homepage": "https://nekut.oshaburikitchin.com/",
   "dependencies": {
     "archiver": "^5.3.1",
     "next": "^13.0.6",
