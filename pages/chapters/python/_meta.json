@@ -1,5 +1,7 @@
 {
   "1.about": "はじめに",
   "2.environment": "環境構築",
-  "3.hello_world": "初めてのプログラム"
+  "3.hello_world": "初めてのプログラム",
+  "4.variable": "変数",
+  "5.constant": "定数"
 }
