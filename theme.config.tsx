@@ -24,16 +24,16 @@ export const siteMetadata = {
 const chatURLParce = new URL(
     process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL,
 );
-let chatIcon = <SiSlack />
+let chatIcon = <SiSlack />;
 if (chatURLParce.hostname.indexOf('discord') !== -1) {
-    chatIcon = <SiDiscord />
+    chatIcon = <SiDiscord />;
 }
 const config: DocsThemeConfig = {
     logo: <span>{siteMetadata.title}</span>,
     chat: {
         icon: (
             <IconContext.Provider value={{ size: '25' }}>
-                    {chatIcon}
+                {chatIcon}
             </IconContext.Provider>
         ),
         link: process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL,
@@ -52,19 +52,19 @@ const config: DocsThemeConfig = {
                         {[
                             {
                                 link: siteMetadata.author.twitter,
-                                icon: SiTwitter,
+                                icon: <SiTwitter />,
                             },
                             {
                                 link: siteMetadata.author.github,
-                                icon: FiGithub,
+                                icon: <FiGithub />,
                             },
                             {
                                 link: siteMetadata.author.zenn,
-                                icon: SiZenn,
+                                icon: <SiZenn />,
                             },
                             {
                                 link: siteMetadata.author.blog,
-                                icon: FiLink,
+                                icon: <FiLink />,
                             },
                         ].map((n) => {
                             return (
@@ -80,7 +80,7 @@ const config: DocsThemeConfig = {
                                             href={n.link}
                                             target="_blank"
                                             rel="noopener noreferrer">
-                                            {n.icon({})}
+                                            {n.icon}
                                         </a>
                                     </IconContext.Provider>
                                 </div>
