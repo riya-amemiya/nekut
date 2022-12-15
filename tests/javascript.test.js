@@ -5,3 +5,9 @@ test('3.hello_world', () => {
     );
     expect(stdout.toString()).toBe('Hello World!\n');
 });
+test('4.variable', () => {
+    const stdout = execSync(
+        'node ./public/data/javascript/4.variable/src/index.js',
+    );
+    expect(stdout.toString()).toBe('18\n19\n');
+});
