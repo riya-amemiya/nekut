@@ -1,7 +1,17 @@
+import { GetCodeLink } from '../../../components/GetCodeLink';
 
-import { GetCodeLink } from "../../../components/GetCodeLink";
-
-# CでHello World
+# C 言語で Hello World
 
 今回のソースコードは<GetCodeLink>こちら</GetCodeLink>からダウンロードできます。
-        
+
+C 言語で Hello World を表示するには、以下のように記述します。
+
+```c
+#include <stdio.h>
+int main(void) {
+    printf("Hello World");
+    return 0;
+}
+```
+
+このように、C 言語では、`printf`関数を使って文字列を出力します。

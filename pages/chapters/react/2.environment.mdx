@@ -1,1 +1,69 @@
-# Reactの環境構築
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# React の環境構築
+
+このコースは`Node.js`を使って React の環境構築を行います。
+`Node.js`コースをまだ受講されていない方は、まずは`Node.js`コースを受講してください。
+`Node.js`コースは[こちら](../nodejs/1.about)です。
+
+## 1. create-react-app をインストール
+
+下記のコマンドを実行して`create-react-app`をインストールします。
+
+<Tabs items={['npm', ' yarn']}>
+    <Tab>
+
+        ```bash
+        npm install -g create-react-app
+        ```
+
+    </Tab>
+
+    <Tab>
+
+        ```bash
+        yarn global add create-react-app
+        ```
+
+    </Tab>
+
+</Tabs>
+
+## 2. React アプリケーションの雛形を作成
+
+下記のコマンドを実行して、React アプリケーションの雛形を作成します。
+
+```bash
+    create-react-app 好きな名前
+```
+
+## 3. 作成した React アプリケーションを実行
+
+作成したアプリに移動します。
+
+```bash
+    cd 好きな名前
+```
+
+起動は下記のコマンドを実行します。
+
+<Tabs items={['npm', ' yarn']}>
+    <Tab>
+
+        ```bash
+        npm start
+        ```
+
+    </Tab>
+
+    <Tab>
+
+        ```bash
+        yarn start
+        ```
+
+    </Tab>
+
+</Tabs>
+
+以降は、アプリケーションをカスタマイズして、独自の機能を追加していくことができます。

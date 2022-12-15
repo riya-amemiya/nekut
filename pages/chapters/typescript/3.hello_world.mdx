@@ -1,24 +1,24 @@
-import { GetCodeLink } from "../../../components/GetCodeLink";
+import { GetCodeLink } from '../../../components/GetCodeLink';
 
-# TypeScriptでHello World
+# TypeScript で Hello World
 
 今回のソースコードは<GetCodeLink>こちら</GetCodeLink>からダウンロードできます。
 
-TypeScriptはJavaScriptの高級言語です。
+TypeScript は JavaScript の高級言語です。
 
 ```typescript filename="hello.ts"
 // Hello Worldプログラム
-console.log("Hello World!");
+console.log('Hello World!');
 ```
 
-次のように`tsc`コマンドを使用してTypeScriptコードをJavaScriptにトランスパイルします。
+次のように`tsc`コマンドを使用して TypeScript コードを JavaScript にトランスパイルします。
 
 ```bash
 $ tsc
 ```
 
-これにより、`build`ディレクトリに`index.js`という名前のJavaScriptファイルが生成されます。<br/>
-その後、次のように`node`コマンドを使用してJavaScriptプログラムを実行できます。
+これにより、`build`ディレクトリに`index.js`という名前の JavaScript ファイルが生成されます。<br/>
+その後、次のように`node`コマンドを使用して JavaScript プログラムを実行できます。
 
 ```bash
 $ node ./build/index.js
@@ -30,5 +30,7 @@ $ node ./build/index.js
 Hello World!
 ```
 
-TypeScriptを使用することで、JavaScriptプログラムがより柔軟で拡張可能なものになります。<br/>
+TypeScript を使用することで、JavaScript プログラムがより柔軟で拡張可能なものになります。<br/>
 また、型システムを使用することで、プログラムのエラーを早期に検出しやすくなります。
+
+このように、TypeScript は JavaScript の上位互換であり、JavaScript のプログラムをそのまま実行できます。<br/>

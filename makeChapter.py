@@ -2,10 +2,31 @@
 import glob
 import pathlib
 
-programmingLannuageList = ["python", "c", "nodejs", "react", "javascript", "typescript"]
+programmingLannuageList = [
+    "python",
+    "c",
+    "nodejs",
+    "react",
+    "javascript",
+    "typescript",
+]
 courseTitles = ["about", "environment", "hello_world", "variable", "constant"]
 
 for lannuage in programmingLannuageList:
+    tmp = pathlib.Path(f"./pages/chapters/{lannuage}")
+    if not tmp.exists():
+        tmp.mkdir()
+        pathlib.Path(f"./pages/chapters/{lannuage}/_meta.json").touch()
+        with open(f"./pages/chapters/{lannuage}/_meta.json", mode="w") as f:
+            f.write(
+                f"""{{
+"1.about": "はじめに",
+"2.environment": "環境構築",
+"3.hello_world": "初めてのプログラム",
+"4.variable": "変数",
+"5.constant": "定数"
+}}"""
+            )
     courses = [False] * 5
     lannuageName = lannuage.capitalize()
     template = [
@@ -49,6 +70,9 @@ import {{ GetCodeLink }} from "../../../components/GetCodeLink";
 
 for lannuage in programmingLannuageList:
     courses = [False] * 5
+    tmp = pathlib.Path(f"./public/data/{lannuage}")
+    if not tmp.exists():
+        tmp.mkdir()
     for i in range(len(courseTitles) - 2):
         i += 2
         dir = pathlib.Path(f"./public/data/{lannuage}/{i + 1}.{courseTitles[i]}")
