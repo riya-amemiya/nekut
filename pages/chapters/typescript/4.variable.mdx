@@ -1,0 +1,31 @@
+import { GetCodeLink } from '../../../components/GetCodeLink';
+
+# Typescript の変数
+
+今回のソースコードは<GetCodeLink>こちら</GetCodeLink>からダウンロードできます。
+
+Typescript の変数は、`let` を使って宣言します。
+
+```typescript
+let age = 10;
+```
+
+JavaScript と違い、Typescript では型を指定することができます。
+
+```typescript
+let age: number = 10;
+```
+
+型を指定することで、変数に代入する値の型を制限することができます。
+
+```typescript
+let age: number = 10; // OK
+let age: number = '10'; // Error
+```
+
+型を指定しない場合、変数に代入する値の型によって、型が決まります。
+
+```typescript
+let age = 10; // number
+let age = '10'; // string
+```

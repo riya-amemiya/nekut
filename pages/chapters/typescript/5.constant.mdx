@@ -1,0 +1,38 @@
+import { GetCodeLink } from '../../../components/GetCodeLink';
+
+# Typescript の定数
+
+今回のソースコードは<GetCodeLink>こちら</GetCodeLink>からダウンロードできます。
+
+Typescript の定数は、`const` を使って宣言します。
+
+```typescript
+const age = 10;
+```
+
+定数には、再代入することができません。
+
+```typescript
+const age = 10;
+age = 20; // Error
+```
+
+JavaScript と違い、Typescript では型を指定することができます。
+
+```typescript
+const age: number = 10;
+```
+
+型を指定することで、変数に代入する値の型を制限することができます。
+
+```typescript
+const age: number = 10; // OK
+const age: number = '10'; // Error
+```
+
+型を指定しない場合、変数に代入する値の型によって、型が決まります。
+
+```typescript
+const age = 10; // number
+const age = '10'; // string
+```
