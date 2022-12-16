@@ -10,9 +10,6 @@ class MyDocument extends Document {
         return (
             <Html lang={'ja'} dir={'ltr'}>
                 <Head>
-                    {/* ... その他のコード */}
-
-                    {/* Google Analytics */}
                     {GA_ID && (
                         <>
                             <script
