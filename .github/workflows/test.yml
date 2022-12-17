@@ -49,12 +49,3 @@ jobs:
             - run: yarn
             - name: Run Test
               run: yarn test
-    cTest:
-        name: C Test on Ubuntu
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Install dependencies
-              run: sudo apt-get install -y libgmp-dev
-            - name: Run Test
-              run: make test
