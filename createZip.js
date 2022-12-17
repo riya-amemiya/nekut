@@ -2,7 +2,14 @@ const archiver = require('archiver');
 const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
-const programmingLanguageList = ['javascript', 'python'];
+const programmingLanguageList = [
+    'python',
+    'c',
+    'nodejs',
+    'react',
+    'javascript',
+    'typescript',
+];
 const createZip = async (dir) => {
     const zipPath = `${dir}/SourceCode.zip`;
     console.log(zipPath);
