@@ -9,8 +9,7 @@ export const usePageView = () => {
         if (!GA_ID) {
             return;
         }
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // rome-ignore lint/suspicious/noExplicitAny: <explanation>
         const handleRouteChange = (url: string, { shallow }: any) => {
             if (!shallow) {
                 pageview(url);

@@ -1,14 +1,14 @@
-export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
-declare global
-{
-    interface Window
-    {
-        gtag (
+export const GA_ID =
+    process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
+
+declare global {
+    interface Window {
+        gtag(
             type: 'config',
             googleAnalyticsId: string,
-            { page_path  }: { page_path:string},
+            { page_path }: { page_path: string },
         );
-        gtag (
+        gtag(
             type: 'event',
             eventAction: string,
             fieldObject: {
@@ -23,7 +23,9 @@ declare global
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 // PV 数の計測
 export const pageview = (url: string) => {
-    if (!GA_ID) return;
+    if (!GA_ID) {
+        return;
+    }
     window.gtag('config', GA_ID, {
         page_path: url,
     });
@@ -42,7 +44,9 @@ export const event = ({
     label: string;
     value?: number;
 }): void => {
-    if (!GA_ID) return;
+    if (!GA_ID) {
+        return;
+    }
     window.gtag('event', action, {
         event_category: category,
         event_label: label,
