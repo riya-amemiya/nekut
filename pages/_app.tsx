@@ -1,14 +1,15 @@
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 
-import { usePageView } from '../hooks/usePageView';
+import { usePageView } from "../hooks/usePageView";
 function MyApp({ Component, pageProps }: AppProps) {
-    // Google Analytics の PV をカウントするイベント
-    usePageView();
+	// Google Analytics の PV をカウントするイベント
+	usePageView();
 
-    return (
-        <>
-            <Component {...pageProps} />;
-        </>
-    );
+	return (
+		<>
+			<Component {...pageProps} />;
+		</>
+	);
 }
+
 export default MyApp;
