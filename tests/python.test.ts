@@ -1,5 +1,4 @@
 import { execSync } from 'child_process';
-// rome-ignore lint/correctness/noUndeclaredVariables: <explanation>
 test('3.hello_world', () => {
     const stdout = execSync(
         'python ./public/data/python/3.hello_world/src/index.py',
