@@ -4,19 +4,18 @@
         "indentStyle": "tab",
         "lineWidth": 80,
         "ignore": [
-            "./.next/*",
-            "./node_modules/*",
-            "./tests/*"
+            ".next",
+            "node_modules"
         ],
         "formatWithErrors": false
     },
     "linter": {
         "enabled": true,
         "ignore": [
-            "./.next/*",
-            "./node_modules/*",
-            "./public/*",
-            "./tests/*"
+            ".next",
+            "node_modules",
+            "public",
+            "tests"
         ],
         "rules": {
             "recommended": true,
@@ -38,7 +37,6 @@
                 "noEmptyInterface": "warn",
                 "noExtraNonNullAssertion": "warn",
                 "noNonNullAssertion": "error",
-                "noPrecisionLoss": "error",
                 "noRedundantUseStrict": "error",
                 "noSetterReturn": "error",
                 "noStringCaseMismatch": "error",

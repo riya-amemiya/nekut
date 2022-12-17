@@ -6,7 +6,6 @@ import { FiGithub, FiLink } from "react-icons/fi";
 import { SiDiscord, SiSlack, SiTwitter, SiZenn } from "react-icons/si";
 export const siteMetadata = {
 	title: process.env.NEXT_PUBLIC_SITE_TITLE,
-	// rome-ignore lint/nursery/noPrecisionLoss: <explanation>
 	siteURL: process.env.NEXT_PUBLIC_SITE_URL.slice(0, -1),
 	repository: "https://github.com/riya-amemiya/nekut",
 	author: {
@@ -18,14 +17,17 @@ export const siteMetadata = {
 };
 const chatURLParce = new URL(process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL);
 let chatIcon = <SiSlack />;
-// rome-ignore lint/nursery/noPrecisionLoss: <explanation>
 if (chatURLParce.hostname.indexOf("discord") !== -1) {
 	chatIcon = <SiDiscord />;
 }
 const config: DocsThemeConfig = {
 	logo: <span>{siteMetadata.title}</span>,
 	chat: {
-		icon: <IconContext.Provider value={{ size: "25" }}>{chatIcon}</IconContext.Provider>,
+		icon: (
+			<IconContext.Provider value={{ size: "25" }}>
+				{chatIcon}
+			</IconContext.Provider>
+		),
 		link: process.env.NEXT_PUBLIC_JOIN_COMMUNITY_URL,
 	},
 	docsRepositoryBase: `${siteMetadata.repository}/blob/beta/`,
@@ -66,7 +68,12 @@ const config: DocsThemeConfig = {
 									}}
 								>
 									<IconContext.Provider value={{ size: "25" }}>
-										<a key={n.link} href={n.link} target="_blank" rel="noopener noreferrer">
+										<a
+											key={n.link}
+											href={n.link}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
 											{n.icon}
 										</a>
 									</IconContext.Provider>
@@ -114,15 +121,36 @@ const config: DocsThemeConfig = {
 	head: () => {
 		return (
 			<>
-				<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-				<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/favicons/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/favicons/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/favicons/favicon-16x16.png"
+				/>
 				<link rel="manifest" href="/favicons/site.webmanifest" />
-				<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+				<link
+					rel="mask-icon"
+					href="/favicons/safari-pinned-tab.svg"
+					color="#5bbad5"
+				/>
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
+				<meta
+					name="google-site-verification"
+					content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+				/>
 			</>
 		);
 	},
