@@ -92,7 +92,7 @@ const config: DocsThemeConfig = {
 			title: siteMetadata.title || "Nextra",
 			images: [
 				{
-					url: `${siteMetadata.siteURL}/img/logo_wide.png`,
+					url: `${siteMetadata.siteURL}/img/logo_wide.jpg`,
 				},
 			],
 			type: "website",
