@@ -19,7 +19,6 @@ declare global {
         );
     }
 }
-
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 // PV 数の計測
 export const pageview = (url: string) => {
