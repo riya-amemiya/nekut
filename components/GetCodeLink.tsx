@@ -10,7 +10,7 @@ export const GetCodeLink = ({
 }) => {
 	const router = useRouter();
 	if (!path) {
-		path = `${router.pathname.replace("chapters", "data")}/SourceCode`;
+		path = `${router.pathname.replace("chapters", "data")}/SourceCode.zip`;
 	}
 
 	return (
