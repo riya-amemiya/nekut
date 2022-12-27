@@ -3,6 +3,5 @@
   "python": "Python",
   "javascript": "JavaScript",
   "typescript": "TypeScript",
-  "nodejs": "Node.js",
-  "react": "React"
+  "nodejs": "Node.js"
 }
