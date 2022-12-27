@@ -20,12 +20,38 @@ let age: number = 10;
 
 ```typescript
 let age: number = 10; // OK
-let age: number = '10'; // Error
+let name: string = 'Taro'; // OK
 ```
 
 型を指定しない場合、変数に代入する値の型によって、型が決まります。
 
 ```typescript
 let age = 10; // number
-let age = '10'; // string
+let name = 'Taro'; // string
 ```
+
+## 型の種類
+
+### 基本型
+
+基本型は、`number`、`string`、`boolean`、`null`、`undefined`、`symbol`、`bigint` です。
+
+-   `number` は、整数や小数を表します。
+-   `string` は、文字列を表します。
+-   `boolean` は、真偽値を表します。
+-   `null` は、値がないことを表します。
+-   `undefined` は、値が未定義であることを表します。
+-   `symbol` は、ES6 で追加された型です。
+-   `bigint` は、ES2020 で追加された型です。
+
+```typescript
+let age: number = 10;
+let name: string = 'Taro';
+let isTrue: boolean = true;
+let isNull: null = null;
+let isUndefined: undefined = undefined;
+let sym: symbol = Symbol('sym');
+let big: bigint = 100n;
+```
+
+その他の型は他の章で説明します。
